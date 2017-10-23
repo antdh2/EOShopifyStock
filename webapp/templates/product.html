@@ -1,0 +1,7 @@
+<strong>{{ product.title }}</strong>
+<br>
+<br>
+<strong>Variants</strong><br>
+{% for v in product.variants %}
+	{{ v.title }} - {{ v.inventory_quantity }}<br>
+{% endfor %}

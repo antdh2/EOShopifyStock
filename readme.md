@@ -1,0 +1,1 @@
+Interact with Shopify API to provide a system of checking made to measure suit orders for any items that are in stock
