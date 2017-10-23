@@ -362,7 +362,7 @@ def is_it_in_stock(iorder, products, name, value):
 def view_todays_orders(request):
 	xlist = {}
 	shop = shopify.Shop.current()
-	date = datetime.datetime.now() - datetime.timedelta(days=1)
+	date = datetime.datetime.now() - datetime.timedelta(days=3)
 	orders = shopify.Order.find(limit=250, created_at_min=date)
 	products = get_all_resources(shopify.Product)
 	for o in orders:
