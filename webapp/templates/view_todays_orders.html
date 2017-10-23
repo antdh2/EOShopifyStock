@@ -1,0 +1,17 @@
+{{ date }}<br><br><br>
+{% for x, y in xlist.items %}
+	{% if y == 'Custom Measurements Order' %}
+	{{ x }} - <strong><font style="color: red;">{{ y }}</font></strong><br>
+	{% else %}
+	{{ x }} - 
+	{% endif %}
+	{% for a, b in y.items %}
+		{% if a == 'Jacket' and b == 'Not In Stock' %}<strong><font style="color: red">{{ a }}</font>, </strong>
+		{% elif a == 'Jacket' and b == 'In Stock' %}<strong><font style="color: green">{{ a }}</font>, </strong>
+		{% elif a == 'Waistcoat' and b == 'Not In Stock' %}<strong><font style="color: red">{{ a }}</font><br> </strong>
+		{% elif a == 'Waistcoat' and b == 'In Stock' %}<strong><font style="color: green">{{ a }}</font><br></strong>
+		{% elif a == 'Trousers' and b == 'Not In Stock' %}<strong><font style="color: red">{{ a }}</font>, </strong>
+		{% elif a == 'Trousers' and b == 'In Stock' %}<strong><font style="color: green">{{ a }}</font>, </strong>
+		{% endif %}
+	{% endfor %}
+{% endfor %}

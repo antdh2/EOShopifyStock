@@ -1,0 +1,30 @@
+<strong>{{ order.name }}</strong>
+<br>
+<br>
+<strong>Order Details</strong><br>
+{% for o in order.line_items %}
+	<hr>
+	{{ o.title }}<br>
+	{{ product_name }}
+	<hr>
+	{% for k in o.properties %}
+		{% if not '_' in k.name %}
+			
+			{{ k.name }} - <font {% if is_in_stock %}style="color: green;"{% endif %}>{{ k.value }}</font> | 
+				{% for y, z in stock_status.items %}
+					{% if y == "Jacket" and k.name == "Jacket Size" %}<font style="{% if z == "In Stock" %}color: green {% else %} color: red{% endif %}"> {{ z }} {% endif %}
+					{% if y == "Waistcoat" and k.name == "Waistcoat Size" %}<font style="{% if z == "In Stock" %}color: green {% else %} color: red{% endif %}"> {{ z }} {% endif %}
+					{% if y == "Trousers" and k.name == "Trouser Size" %}<font style="{% if z == "In Stock" %}color: green {% else %} color: red{% endif %}"> {{ z }} {% endif %}
+
+					</font>
+				{% endfor %}<br>
+		{% endif %}
+	{% endfor %}
+	<br>
+{% endfor %}
+
+<hr>
+{% for k, v in stock_status.items %}
+	{{ k }} - <strong>{{ v }}</strong><br>
+{% endfor %}
+<hr>

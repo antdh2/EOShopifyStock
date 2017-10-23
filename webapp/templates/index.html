@@ -1,0 +1,53 @@
+<!-- <strong>3 Piece Suits</strong>  <br>
+{% for p in products %}
+	{% if p.product_type == '3 Piece Suit' %}
+		{{ p.title }}<br>
+	{% endif %}
+{% endfor %}
+<br>
+<strong>Jackets (NOT Clerance)</strong>  <br>
+{% for p in products %}
+	{% if p.product_type == 'Jacket' %}
+		{{ p.title }}<br>
+	{% endif %}
+{% endfor %}
+<br>
+<strong>Waistcoats (NOT Clerance)</strong>  <br>
+{% for p in products %}
+	{% if p.product_type == 'Waistcoat' %}
+		{{ p.title }}<br>
+	{% endif %}
+{% endfor %}
+<br>
+<strong>Trousers (NOT Clerance)</strong>  <br>
+{% for p in products %}
+	{% if p.product_type == 'Trousers' %}
+		{{ p.title }}<br>
+	{% endif %}
+{% endfor %}
+<br> -->
+<a href="{% url 'view_orders' 5236806672 %}">View Order 5236806672</a>
+<br>
+<a href="{% url 'view_todays_orders' %}">View Today's Orders</a>
+<br>
+<br>
+<strong>Jacket - Clearance</strong>  <br>
+{% for p in products %}
+	{% if p.product_type == 'Clearance - Jacket' %}
+		<a href="{% url 'view_product' p.id %}">{{ p.title }}</a><br>
+	{% endif %}
+{% endfor %}
+<br>
+<strong>Waistcoat - Clearance</strong>  <br>
+{% for p in products %}
+	{% if p.product_type == 'Clearance - Waistcoat' %}
+		<a href="{% url 'view_product' p.id %}">{{ p.title }}</a><br>
+	{% endif %}
+{% endfor %}
+<br>
+<strong>Trousers - Clearance</strong>  <br>
+{% for p in products %}
+	{% if p.product_type == 'Clearance - Trousers' %}
+		<a href="{% url 'view_product' p.id %}">{{ p.title }}</a><br>
+	{% endif %}
+{% endfor %}
