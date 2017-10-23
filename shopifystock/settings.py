@@ -26,7 +26,7 @@ SECRET_KEY = '39)0@du%ke0d8h1eq76^*0scgqr(_px-_$1bfxb!q*%sz4*re^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['empire01']
 
 
 # Application definition
